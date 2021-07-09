@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   currentLocation.addEventListener("click", (e) => {
     e.preventDefault();
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        getCurrentPosition(position.coords.latitude, position.coords.longitude);
+      });
+    }
   });
 
   closeSearch.addEventListener("click", (e) => {
@@ -54,7 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
     location(e.target.value);
   });
 
-  let defaultLocation = "418440";
+  let defaultLocation = "638242";
+
+  async function getCurrentPosition(latitude, longitude) {
+    await fetch(
+      `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          weather(data[0].woeid);
+        }
+      });
+  }
 
   const location = async (search) => {
     await fetch(
