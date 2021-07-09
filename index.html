@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="public/css/tailwind.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body class="font-rale text-primary-font md:flex">
+    <div class="min-h-screen bg-primary md:w-115 hidden">
+      <header>
+        <nav
+          class="flex justify-between items-center py-4 px-3 md:pt-14 md:px-12"
+        >
+          <a href="#" class="bg-tertiary py-3 px-5">Search for Places</a>
+          <a href="#" class=""
+            ><span class="bg-tertiary rounded-full p-3 material-icons"
+              >gps_fixed</span
+            ></a
+          >
+        </nav>
+      </header>
+
+      <div class="h-80 md:pt-20">
+        <div
+          class="
+            bg-weather-background bg-cover bg-top bg-no-repeat bg-opacity-90
+          "
+        >
+          <div
+            class="
+              h-80
+              bg-primary bg-opacity-90
+              flex
+              justify-center
+              items-center
+            "
+            id="main-weather-img"
+          >
+            <img
+              src="public/weather-img/Showers.png"
+              alt="Weather Img"
+              class="w-36 md:w-52"
+            />
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-secondary-font"
+          id="region-weather"
+        >
+          <p class="text-9xl text-right text-primary-font font-medium">
+            15<span class="text-5xl text-secondary-font">°C</span>
+          </p>
+          <p class="py-6 text-4xl font-semibold md:py-20">Shower</p>
+          <p>Today<span class="px-4"> • </span>Fri. 5 Jun</p>
+          <div class="pt-8 items-center flex">
+            <span class="material-icons"> place </span>
+            <span class="">Helsinki</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="min-h-screen bg-primary md:w-115">
+      <span class="material-icons right-0 absolute p-4"> close </span>
+      <form action="" class="pt-16 px-3 flex justify-between">
+        <input
+          type="text"
+          name="location"
+          id="location"
+          class="w-60 h-12 bg-primary border pl-4"
+          placeholder="search location"
+        />
+        <input type="submit" value="Search" class="w-20 h-12 bg-blue" />
+      </form>
+    </div>
+
+    <div class="min-h-screen bg-secondary md:w-full">
+      <div
+        class="
+          grid grid-cols-2
+          gap-8
+          py-14
+          px-12
+          md:flex md:pt-36 md:pl-40
+          justify-center
+        "
+        id="weather-of-others-days"
+      >
+        <div
+          class="bg-primary w-30 h-44 flex flex-col justify-center items-center"
+        >
+          <p>Tomorrow</p>
+          <img
+            class="w-14 pt-3 pb-7"
+            src="public/weather-img/Thunderstorm.png"
+            alt="Weather"
+          />
+          <span>16°C<span class="text-secondary-font pl-4">11°C</span></span>
+        </div>
+
+        <div
+          class="bg-primary w-30 h-44 flex flex-col justify-center items-center"
+        >
+          <p>Tomorrow</p>
+          <img
+            class="w-14 pt-3 pb-7"
+            src="public/weather-img/Thunderstorm.png"
+            alt="Weather"
+          />
+          <span>16°C<span class="text-secondary-font pl-4">11°C</span></span>
+        </div>
+        <div
+          class="bg-primary w-30 h-44 flex flex-col justify-center items-center"
+        >
+          <p>Tomorrow</p>
+          <img
+            class="w-14 pt-3 pb-7"
+            src="public/weather-img/Thunderstorm.png"
+            alt="Weather"
+          />
+          <span>16°C<span class="text-secondary-font pl-4">11°C</span></span>
+        </div>
+        <div
+          class="bg-primary w-30 h-44 flex flex-col justify-center items-center"
+        >
+          <p>Tomorrow</p>
+          <img
+            class="w-14 pt-3 pb-7"
+            src="public/weather-img/Thunderstorm.png"
+            alt="Weather"
+          />
+          <span>16°C<span class="text-secondary-font pl-4">11°C</span></span>
+        </div>
+        <div
+          class="bg-primary w-30 h-44 flex flex-col justify-center items-center"
+        >
+          <p>Tomorrow</p>
+          <img
+            class="w-14 pt-3 pb-7"
+            src="public/weather-img/Thunderstorm.png"
+            alt="Weather"
+          />
+          <span>16°C<span class="text-secondary-font pl-4">11°C</span></span>
+        </div>
+      </div>
+
+      <h2 class="pl-5 text-2xl font-bold md:pl-80 md:pt-20 md:pb-8">
+        Today's Highlights
+      </h2>
+
+      <div
+        class="grid pl-6 gap-8 md:pl-40 md:grid-cols-2 md:gap-12 items-center"
+      >
+        <div
+          class="
+            bg-primary
+            flex flex-col
+            justify-center
+            items-center
+            w-80
+            h-52
+            py-9
+            font-medium
+            md:justify-self-center
+          "
+          id="wind-status"
+        >
+          <p class="">Wind status</p>
+          <p class="font-bold text-6xl pb-8">
+            7<span class="text-4xl font-medium">mph</span>
+          </p>
+          <p class="">WSW</p>
+        </div>
+
+        <div
+          class="
+            bg-primary
+            flex flex-col
+            justify-center
+            items-center
+            w-80
+            h-52
+            py-9
+            font-medium
+            md:justify-self-center
+          "
+        >
+          <div id="humidity" class="text-center">
+            <p class="">Humidity</p>
+            <p class="font-bold text-6xl pb-8">
+              84<span class="text-4xl font-normal">%</span>
+            </p>
+          </div>
+          <div
+            class="
+              flex
+              justify-between
+              w-56
+              text-secondary-font
+              font-bold
+              text-xs
+            "
+          >
+            <p>0</p>
+            <p>50</p>
+            <p>100</p>
+          </div>
+
+          <div class="max-w-56 w-full h-2 rounded-full bg-primary-font">
+            <div
+              class="
+                bg-yellow
+                w-2/3
+                h-full
+                rounded-full
+                text-xs
+                font-bold
+                text-tertiary-font
+              "
+              id="percentage"
+            ></div>
+            <div class="flex justify-end font-bold text-xs text-tertiary-font">
+              %
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="
+            bg-primary
+            flex flex-col
+            justify-center
+            items-center
+            w-80
+            pt-5
+            pb-9
+            font-medium
+            md:justify-self-center
+          "
+          id="visibility"
+        >
+          <p class="">Visibility</p>
+          <p class="font-bold text-6xl">
+            6,4 <span class="text-4xl font-medium"> miles</span>
+          </p>
+        </div>
+
+        <div
+          class="
+            bg-primary
+            flex flex-col
+            justify-center
+            items-center
+            w-80
+            pt-5
+            pb-9
+            font-medium
+            md:justify-self-center
+          "
+          id="air-pressure"
+        >
+          <p class="">Air Pressure</p>
+          <p class="font-bold text-6xl">
+            998<span class="text-4xl font-medium">mb</span>
+          </p>
+        </div>
+      </div>
+
+      <footer
+        class="
+          bg-secondary
+          flex
+          justify-center
+          pt-24
+          md:pt-6
+          pb-6
+          text-tertiary-font
+        "
+      >
+        <p>Created By <span class="font-bold">Sedian</span></p>
+      </footer>
+    </div>
+
+    <script src="public/js/scripts.js" type="module"></script>
+  </body>
+</html>
