@@ -14,13 +14,15 @@
     <title>Weather App</title>
   </head>
   <body class="font-rale text-primary-font md:flex">
-    <div class="min-h-screen bg-primary md:w-115 hidden">
+    <div class="min-h-screen bg-primary md:w-115" id="main-weather">
       <header>
         <nav
           class="flex justify-between items-center py-4 px-3 md:pt-14 md:px-12"
         >
-          <a href="#" class="bg-tertiary py-3 px-5">Search for Places</a>
-          <a href="#" class=""
+          <a href="#" class="bg-tertiary py-3 px-5" id="btn-search"
+            >Search for Places</a
+          >
+          <a href="#" class="" id="current-location"
             ><span class="bg-tertiary rounded-full p-3 material-icons"
               >gps_fixed</span
             ></a
@@ -69,9 +71,21 @@
       </div>
     </div>
 
-    <div class="min-h-screen bg-primary md:w-115">
-      <span class="material-icons right-0 absolute p-4"> close </span>
-      <form action="" class="pt-16 px-3 flex justify-between">
+    <div class="min-h-screen bg-primary md:w-115 hidden" id="search-div">
+      <span
+        class="
+          material-icons
+          right-0
+          absolute
+          p-4
+          md:static md:flex md:justify-end
+          cursor-pointer
+        "
+        id="close-search"
+      >
+        close
+      </span>
+      <form action="#" class="pt-16 px-3 flex justify-between" id="search">
         <input
           type="text"
           name="location"
@@ -79,8 +93,44 @@
           class="w-60 h-12 bg-primary border pl-4"
           placeholder="search location"
         />
-        <input type="submit" value="Search" class="w-20 h-12 bg-blue" />
+        <input
+          type="submit"
+          value="Search"
+          class="w-20 h-12 bg-blue cursor-pointer"
+        />
       </form>
+      <div class="px-3 pt-9" id="buttons-search">
+        <button
+          class="hover:border hover:border-tertiary w-80 h-16 text-left pl-3"
+          value="Lima"
+        >
+          Lima
+        </button>
+        <button
+          class="hover:border hover:border-tertiary w-80 h-16 text-left pl-3"
+          value="Buenos Aires"
+        >
+          Buenos Aires
+        </button>
+        <button
+          class="hover:border hover:border-tertiary w-80 h-16 text-left pl-3"
+          value="Rio de Janeiro"
+        >
+          Rio de Janeiro
+        </button>
+        <button
+          class="hover:border hover:border-tertiary w-80 h-16 text-left pl-3"
+          value="Caracas"
+        >
+          Caracas
+        </button>
+        <button
+          class="hover:border hover:border-tertiary w-80 h-16 text-left pl-3"
+          value="Mexico City"
+        >
+          Mexico City
+        </button>
+      </div>
     </div>
 
     <div class="min-h-screen bg-secondary md:w-full">

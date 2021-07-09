@@ -6,20 +6,70 @@ document.addEventListener("DOMContentLoaded", () => {
     humidity = document.getElementById("humidity"),
     percentage = document.getElementById("percentage"),
     visibility = document.getElementById("visibility"),
-    airpressure = document.getElementById("air-pressure");
+    airpressure = document.getElementById("air-pressure"),
+    mainWeather = document.getElementById("main-weather"),
+    btnSearch = document.getElementById("btn-search"),
+    currentLocation = document.getElementById("current-location"),
+    searchDiv = document.getElementById("search-div"),
+    searchForm = document.getElementById("search"),
+    inputText = document.getElementById("location"),
+    buttonsSearch = document.getElementById("buttons-search"),
+    closeSearch = document.getElementById("close-search");
+
+  btnSearch.addEventListener("click", (e) => {
+    e.preventDefault();
+    showAndHidden();
+  });
+
+  currentLocation.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+
+  closeSearch.addEventListener("click", (e) => {
+    e.preventDefault();
+    showAndHidden();
+  });
+
+  function showAndHidden() {
+    if (searchDiv.classList.contains("hidden")) {
+      searchDiv.classList.remove("hidden");
+    } else {
+      searchDiv.classList.add("hidden");
+    }
+
+    if (mainWeather.classList.contains("hidden")) {
+      mainWeather.classList.remove("hidden");
+    } else {
+      mainWeather.classList.add("hidden");
+    }
+  }
+
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    location(inputText.value);
+  });
+
+  buttonsSearch.addEventListener("click", (e) => {
+    e.preventDefault();
+    location(e.target.value);
+  });
+
   let defaultLocation = "418440";
 
   const location = async (search) => {
-    fetch(
+    await fetch(
       `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=${search}`
     )
       .then((res) => res.json())
       .then((locationData) => {
-        console.log(locationData);
+        if (locationData.length > 0) {
+          weather(locationData[0].woeid);
+          showAndHidden();
+          inputText.value = "";
+        } else {
+        }
       });
   };
-
-  location("buenos");
 
   const weather = async (location) => {
     fetch(
